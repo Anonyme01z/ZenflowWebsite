@@ -73,11 +73,11 @@ export default function Contact() {
               </div>
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-indigo-600" />
-                <span className="ml-3 text-slate-600">+1 (555) 123-4567</span>
+                <span className="ml-3 text-slate-600">+234 706 521 4616</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-indigo-600" />
-                <span className="ml-3 text-slate-600">123 Innovation Street, Tech City, TC 12345</span>
+                <span className="ml-3 text-slate-600">123 Innovation Street, Tech City</span>
               </div>
             </div>
           </div>
