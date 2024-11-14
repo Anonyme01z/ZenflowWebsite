@@ -28,8 +28,8 @@ export default function Contact() {
     // Send email notification
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_f2u6oke',
+        'template_lysn2so',
         formData,
         'YOUR_USER_ID'
       );
