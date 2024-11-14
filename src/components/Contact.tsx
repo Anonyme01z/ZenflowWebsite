@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Contact() {
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [countryCode, setCountryCode] = useState('+1'); // Default country code for USA
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -11,19 +13,8 @@ export default function Contact() {
       name: e.target.name.value,
       email: e.target.email.value,
       message: e.target.message.value,
+      phone: `${countryCode} ${phoneNumber}`, // Combine country code and phone number
     };
-
-    // Send data to Google Sheets
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbxSrZv2JDtd_m_dgmryLbGgldMRSltaP81qBKS83NQ8/dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      console.log('Data sent to Google Sheets successfully!');
-    } catch (error) {
-      console.error('Error submitting form to Google Sheets:', error);
-    }
 
     // Send email notification
     try {
@@ -80,6 +71,33 @@ export default function Contact() {
             </div>
 
             <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-slate-700">
+                Phone Number
+              </label>
+              <div className="flex items-center">
+                <select
+                  name="countryCode"
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="mr-2 p-2 border rounded-md"
+                >
+                  <option value="+1">+1 (USA)</option>
+                  <option value="+44">+44 (UK)</option>
+                  <option value="+91">+91 (India)</option>
+                  {/* Add more country codes as needed */}
+                </select>
+                <input
+                  type="text"
+                  name="phone"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  placeholder="Your phone number"
+                />
+              </div>
+            </div>
+
+            <div>
               <label htmlFor="message" className="block text-sm font-medium text-slate-700">
                 Message
               </label>
@@ -97,7 +115,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                Send Message
+                Submit
               </button>
             </div>
           </form>
