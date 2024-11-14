@@ -1,7 +1,44 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Contact() {
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      message: e.target.message.value,
+    };
+
+    // Send data to Google Sheets
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbxSrZv2JDtd_m_dgmryLbGgldMRSltaP81qBKS83NQ8/dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      console.log('Data sent to Google Sheets successfully!');
+    } catch (error) {
+      console.error('Error submitting form to Google Sheets:', error);
+    }
+
+    // Send email notification
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        formData,
+        'YOUR_USER_ID'
+      );
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   return (
     <div id="contact" className="bg-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,7 +52,7 @@ export default function Contact() {
         </div>
 
         <div className="mt-12 max-w-lg mx-auto">
-          <form className="grid grid-cols-1 gap-6">
+          <form className="grid grid-cols-1 gap-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-700">
                 Name
