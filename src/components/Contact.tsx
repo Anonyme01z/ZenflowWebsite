@@ -25,6 +25,9 @@ export default function Contact() {
         'qJz1jG03Dt5V-37m6'
       );
       alert('Message sent successfully!');
+    
+      // Clear the form fields after successful submission
+    e.target.reset();
     } catch (error) {
       console.error('Error sending email:', error);
     }
