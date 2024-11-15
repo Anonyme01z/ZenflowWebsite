@@ -4,8 +4,8 @@ import { ArrowRight } from 'lucide-react';
 export default function CaseStudies() {
   const cases = [
     {
-      title: 'E-commerce Revolution',
-      description: 'How we helped an online retailer increase sales by 150% with AI-powered customer service',
+      title: 'Are Your Sales Stalling?',
+      description: 'Unlock explosive growth with AI-driven customer service. See how we helped a client increase sales by 150%',
       image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
     },
     {
@@ -28,7 +28,7 @@ export default function CaseStudies() {
             Success Stories
           </h2>
           <p className="mt-4 max-w-2xl text-xl text-slate-600 lg:mx-auto">
-            See how we've helped businesses transform with AI and automation
+          Curious to see how AI and automation can supercharge your business? Explore real-world success stories.
           </p>
         </div>
 

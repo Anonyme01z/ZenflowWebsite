@@ -24,7 +24,7 @@ export default function Contact() {
         formData,
         'qJz1jG03Dt5V-37m6'
       );
-      alert('Message sent successfully!');
+      alert('We will be in touch!');
     
       // Clear the form fields after successful submission
     e.target.reset();

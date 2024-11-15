@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import Services from './components/Services';
+import Products from './components/Products';
 import BotShowcase from './components/BotShowcase';
 import CaseStudies from './components/CaseStudies';
 import Contact from './components/Contact';
@@ -15,7 +15,7 @@ export default function App() {
       <main>
         <Hero />
         <Features />
-        <Services />
+        <Products />
         <BotShowcase />
         <CaseStudies />
         <Contact />

@@ -15,7 +15,7 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-slate-600 hover:text-indigo-600">Features</a>
-            <a href="#services" className="text-slate-600 hover:text-indigo-600">Services</a>
+            <a href="#products" className="text-slate-600 hover:text-indigo-600">Products</a>
             <a href="#bot-showcase" className="text-slate-600 hover:text-indigo-600">Try Our Bots</a>
             <a href="#case-studies" className="text-slate-600 hover:text-indigo-600">Case Studies</a>
             <a href="#contact" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-b">
             <a href="#features" className="block px-3 py-2 text-slate-600 hover:text-indigo-600">Features</a>
-            <a href="#services" className="block px-3 py-2 text-slate-600 hover:text-indigo-600">Services</a>
+            <a href="#products" className="block px-3 py-2 text-slate-600 hover:text-indigo-600">Products</a>
             <a href="#bot-showcase" className="block px-3 py-2 text-slate-600 hover:text-indigo-600">Try Our Bots</a>
             <a href="#case-studies" className="block px-3 py-2 text-slate-600 hover:text-indigo-600">Case Studies</a>
             <a href="#contact" className="block px-3 py-2 text-indigo-600 font-medium">Contact Us</a>
